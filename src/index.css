@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Luxurious+Roman&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --body-bg: #ffffff;
+  --light-foreground: #fafbfb;
+  --light-background: #c2c2c2;
+
+  --primary-text: black;
+  --secondary-text: gray;
+
+  --border-color: rgba(159, 161, 167, 0.664);
+
+
+}
+
+body {
+  height: 100vh;
+  background-color: var(--body-bg);
+  overflow-x: hidden;
+  letter-spacing: 1px;
+  padding: 0%;
+  font-family: "Faculty Glyphic", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+  width: 0px;
+}
+
+@layer components {
+  .scrollbar-invisible {
+    @apply overscroll-y-auto;
+    width: 5px;
+  }
+  .scrollbar-custom {
+    @apply overflow-y-scroll; /* Enables scrolling */
+  }
+
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 5px; /* Adjust scrollbar width */
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-md; /* Customize the scrollbar thumb */
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400; /* Hover effect */
+    @apply cursor-pointer;
+  }
+}
